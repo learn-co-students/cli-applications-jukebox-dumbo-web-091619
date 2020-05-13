@@ -30,18 +30,13 @@ def play(songs)
   
   input = gets.strip
   
-  truthy = false
-  
   songs.each_with_index do |item, index|
     if item == input.to_s || index == (input.to_i - 1)
-      puts "Playing #{item}"
-      truthy = true
+      return "Playing #{item}"
     end
   end
   
-  if truthy == false
-    puts "Invalid input, please try again"
-  end
+  return "Invalid input, please try again"
 
 end
 
@@ -65,3 +60,5 @@ def run(songs)
     puts "That is not a valid command"
   end
 end
+
+puts play(songs)
